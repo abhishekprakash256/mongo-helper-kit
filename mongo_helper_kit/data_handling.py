@@ -23,7 +23,6 @@ SECTION_FILE_PATH = "../static/section_data.json"
 FILE_PATH_LST = [PROJECT_ARTICLE_FILE_PATH,TECH_ARTICLE_FILE_PATH]
 
 
-
 #db names in mongo
 db_name = ["articles","section"]
 

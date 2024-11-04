@@ -6,67 +6,6 @@ import traceback
 import os
 
 
-#const values
-collection_lst = ["projects","tech","life"]
-
-
-"""
-def check_mongo_status():
-    try:
-        # Execute the command to check MongoDB server status
-        result = subprocess.run(['mongod', '--version'], capture_output=True, text=True)
-        
-        # Check if the command was successful
-        if result.returncode == 0:
-            print("MongoDB is installed")
-            return True
-        else:
-            print("MongoDB is not installed or not running.")
-            return False
-    
-    except FileNotFoundError:
-        # Handle the case where 'mongod' command is not found (MongoDB not installed)
-        print("MongoDB is not installed.")
-        return False
-
-
-#create the database client 
-def create_mongo_client():
-
-
-    mongo_status = check_mongo_status()
-
-    if mongo_status:
-        try:
-
-            #new code ----
-            #mongo_host = os.getenv('MONGO_HOST', 'localhost')  # Use 'localhost' or the Docker host IP
-            #mongo_port = int(os.getenv('MONGO_PORT', 27017))
-            #client = MongoClient(mongo_host, mongo_port)
-
-
-            # Attempt to create a MongoClient -- old code
-            client = MongoClient('mongo', 27017, serverSelectionTimeoutMS=2000)  # 2-second timeout  # new code
-            #client = MongoClient('localhost', 27017)
-            client.server_info()  # This forces a connection attempt.
-            print("MongoDB client created successfully.")
-            #print("client is created")
-            return client
-
-        except ImportError:
-            # Print error message if pymongo is not installed
-            print("MongoDB is not installed on this system.")
-            return None
-
-        except Exception as e:
-            # Print error message if MongoClient creation fails for other reasons
-            print("Error creating MongoDB client:", e)
-            return None
-    
-    else:
-        return "Mongo Missing"
-
-"""
 #new code
 def create_mongo_client():
     hosts = ['localhost', 'mongo']  # List of hosts to try
@@ -83,10 +22,6 @@ def create_mongo_client():
     # If neither host works, raise an exception or return None
     print("Failed to create MongoDB client with all host options.")
     return None
-
-
-
-
 
 
 #make the mongo client 
