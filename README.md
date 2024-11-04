@@ -1,11 +1,7 @@
 
-Here’s a basic blueprint for your MongoDB helper functions repository README. It includes essential sections like an overview, installation instructions, usage examples, and more.
-
----
-
 # Mongo Helper Kit
 
-A collection of helper functions and utilities for MongoDB to simplify common database operations. This library provides reusable functions for database connections, CRUD operations, and other MongoDB interactions.
+A collection of helper functions and utilities for MongoDB to simplify common database operations. This library provides reusable functions for database connections, CRUD operations, and other MongoDB interactions. That uses to mangane the operations in the Portfolio website 
 
 ## Table of Contents
 
@@ -38,9 +34,6 @@ pip install -r requirements.txt
 
 Or install directly via pip (if available on PyPI):
 
-```bash
-pip install mongo-helper-kit
-```
 
 ## Usage
 
