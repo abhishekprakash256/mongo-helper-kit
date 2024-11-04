@@ -30,10 +30,18 @@ Clone the repository and install the required dependencies:
 git clone git@github.com:abhishekprakash256/mongo-helper-kit.git
 cd mongo-helper-kit
 pip install -r requirements.txt
+
+#installing through pip as a package , standard appraoch , after github auth done
+pip install git+https://github.com/abhsihekprakash256/mongo-helper-kit.git  
+
 ```
 
-Or install directly via pip (if available on PyPI):
-
+## Requirements 
+```
+mongomock==4.2.0.post1
+pymongo==4.7.2
+pytest==8.3.3
+```
 
 ## Usage
 
