@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "monger-helper-kit"
+name = "mongo-helper-kit"
 version = "0.1.0"
 description = "ction to perfrom CRUD operations"
 authors = ["abhishekprakash256 <abhishekprakash47@gmail.com>"]
