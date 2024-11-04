@@ -13,14 +13,14 @@ from .connection import create_mongo_client
 
 
 #make the mongo client 
-mongo_client_docker = create_mongo_client()
+mongo_client = create_mongo_client()
 
 
 #the helper class for the mongo functions 
 # Helper class for MongoDB functions
 class Helper_fun():
 
-    def __init__(self,client = mongo_client_docker):
+    def __init__(self,client = mongo_client):
         self.mongo_client = client
 
     def make_database_and_collection(self, db_name, db_collection):
