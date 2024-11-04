@@ -9,7 +9,6 @@ from mongo_helper import Helper_fun, create_mongo_client
 
 #the read data from the json files
 from read_data_json import *
-from pymongo import MongoClient
 
 
 #const files
