@@ -12,7 +12,7 @@ from mongo_helper_kit import Helper_fun
 
 @pytest.fixture
 def mock_mongo_client():
-    # Create a mock MongoDB client
+    # Create a mock MongoDB client using mongomock
     client = mongomock.MongoClient()
     yield client
     client.close()
@@ -22,6 +22,7 @@ def mock_mongo_client():
 def helper(mock_mongo_client):
     # Create an instance of Helper_fun with the mock client
     return Helper_fun(client=mock_mongo_client)
+
 
 
 def test_make_database_and_collection(helper):

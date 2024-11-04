@@ -21,10 +21,13 @@ from .connection import create_mongo_client
 
 class Helper_fun():
 
-    def __init__(self, host_name):
+    def __init__(self, host_name=None, client=None):
 
         #create the mongo client
-        self.mongo_client = create_mongo_client(host_name)
+        if client is not None:
+            self.mongo_client = client  # Use the provided mock client
+        else:
+            self.mongo_client = create_mongo_client(host_name)  # Create a real client with the host_name
 
 
     def make_database_and_collection(self, db_name, db_collection):
