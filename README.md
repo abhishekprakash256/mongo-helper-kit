@@ -37,7 +37,22 @@ Or install directly via pip (if available on PyPI):
 
 ## Usage
 
+```
+from mongo_helper_kit.mongo_crud_operations import Helper_fun
+from mongo_helper_kit.connection import connect_to_db
 
+# Establish connection
+db_helper = Helper_fun()
+
+# Create a database and collection
+db_helper.make_database_and_collection("test_db", "test_collection")
+
+# Insert data
+db_helper.insert_data("test_db", "test_collection", {"name": "Example", "value": 123})
+
+# Show all data
+db_helper.show_all_data("test_db", "test_collection")
+```
 
 ## Examples
 
@@ -45,6 +60,9 @@ Or install directly via pip (if available on PyPI):
 
 ## Configuration
 
+- Clients 
+    - "mongo" is passed when using insiede the docker conatienr to acces the mongo
+    - "localhost" is passed when using outside the docker container to access the mongo for bulk data insertion
 
 
 

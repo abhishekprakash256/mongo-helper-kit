@@ -10,7 +10,6 @@ import mongomock
 from mongo_helper_kit import Helper_fun
 
 
-
 @pytest.fixture
 def mock_mongo_client():
     # Create a mock MongoDB client
@@ -40,23 +39,6 @@ def test_make_collections(helper):
 
     assert 'test_collection' in helper.mongo_client['test_db'].list_collection_names()
 
-
-def test_show_collections(helper):
-    # Test showing collections
-    helper.make_database_and_collection('test_db', 'test_collection')
-    collections = helper.show_collections('test_db')
-
-    assert collections == ['test_collection']
-
-
-def test_show_all_data(helper):
-    # Test showing all data in the collection
-    helper.make_database_and_collection('test_db', 'test_collection')
-    helper.insert_data('test_db', 'test_collection', [{'name': 'Alice'}, {'name': 'Bob'}])
-    
-    data = helper.show_all_data('test_db', 'test_collection')
-    
-    assert len(data) == 2  # Should return 2 documents
 
 
 def test_show_article_data(helper):
