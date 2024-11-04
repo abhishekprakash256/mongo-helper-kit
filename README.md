@@ -38,7 +38,6 @@ Or install directly via pip (if available on PyPI):
 ## Usage
 
 
-```
 
 ## Examples
 
