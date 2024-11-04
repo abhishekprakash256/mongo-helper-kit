@@ -129,7 +129,7 @@ from mongo_helper_kit.mongo_crud_operations import Helper_fun
 
 
 # Establish connection
-db_helper = Helper_fun()
+db_helper = Helper_fun("mongo") #or pass localhost using outside container
 
 # Create a database and collection
 db_helper.make_database_and_collection("test_db", "test_collection")

@@ -13,7 +13,7 @@ INSERTION_DATA = [{'name': 'Alice'}, {'name': 'Bob'}]
 import mongo_helper_kit
 
 # Create MongoDB client and initilaize the class for mongo methods
-helper_fun = mongo_helper_kit.Helper_fun()
+helper_fun = mongo_helper_kit.Helper_fun("localhost")
 
 # Create database and collection
 helper_fun.make_database_and_collection(DB_NAME, COLLECTION_NAME)

@@ -13,15 +13,19 @@ from .connection import create_mongo_client
 
 
 #make the mongo client 
-mongo_client = create_mongo_client()
+#mongo_client = create_mongo_client("local")
 
 
 #the helper class for the mongo functions 
 # Helper class for MongoDB functions
+
 class Helper_fun():
 
-    def __init__(self,client = mongo_client):
-        self.mongo_client = client
+    def __init__(self, host_name):
+
+        #create the mongo client
+        self.mongo_client = create_mongo_client(host_name)
+
 
     def make_database_and_collection(self, db_name, db_collection):
         """
