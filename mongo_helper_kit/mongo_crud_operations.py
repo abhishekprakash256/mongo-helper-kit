@@ -1,5 +1,5 @@
 """
-The file to perform the have functions to make the crud operations
+The file to have supporting methods to perform CRUD operations in Mongo
 """
 
 #imports
