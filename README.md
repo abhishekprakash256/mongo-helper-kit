@@ -39,7 +39,7 @@ Or install directly via pip (if available on PyPI):
 
 ```
 from mongo_helper_kit.mongo_crud_operations import Helper_fun
-from mongo_helper_kit.connection import connect_to_db
+
 
 # Establish connection
 db_helper = Helper_fun()

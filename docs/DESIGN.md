@@ -126,7 +126,7 @@ Error handling is primarily done using the `traceback` module to print error mes
 
 ```python
 from mongo_helper_kit.mongo_crud_operations import Helper_fun
-from mongo_helper_kit.connection import connect_to_db
+
 
 # Establish connection
 db_helper = Helper_fun()
