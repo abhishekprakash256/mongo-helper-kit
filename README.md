@@ -54,9 +54,6 @@ db_helper.insert_data("test_db", "test_collection", {"name": "Example", "value":
 db_helper.show_all_data("test_db", "test_collection")
 ```
 
-## Examples
-
-
 
 ## Configuration
 
@@ -65,6 +62,10 @@ db_helper.show_all_data("test_db", "test_collection")
     - "localhost" is passed when using outside the docker container to access the mongo for bulk data insertion
 
 
+## Note
+
+The client name passed in the helper fucntion is imp as using from outside use - "localhost"
+The client name passed in the helper fucntion is imp as using from docker container use - "mongo"
 
 ## License
 

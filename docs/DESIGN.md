@@ -151,6 +151,11 @@ db_helper.show_all_data("test_db", "test_collection")
 ## 9. Conclusion
 The Mongo Helper Kit aims to simplify MongoDB interactions by providing a set of reusable, modular, and maintainable components for database and chat-related operations. With clear error handling, configuration management, and essential CRUD functionalities, this package helps developers focus on business logic while minimizing boilerplate code.
 
+## 10. Note
+
+The client name passed in the helper fucntion is imp as using from outside use - "localhost"
+The client name passed in the helper fucntion is imp as using from docker container use - "mongo"
+
 --- 
 
 This document includes details on the architecture, modules, error handling, and examples, offering a complete overview of the Mongo Helper Kit for easy understanding and future maintenance.
