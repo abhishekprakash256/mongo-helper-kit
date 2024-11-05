@@ -32,7 +32,7 @@ cd mongo-helper-kit
 pip install -r requirements.txt
 
 #installing through pip as a package , standard appraoch , after github auth done
-pip install git+https://github.com/abhsihekprakash256/mongo-helper-kit.git  
+pip install git+https://github.com/abhishekprakash256/mongo-helper-kit.git  
 
 ```
 
