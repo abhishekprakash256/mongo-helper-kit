@@ -106,6 +106,3 @@ Run the command pytest in root directory
 The client name passed in the helper fucntion is imp as using from outside use - "localhost"
 The client name passed in the helper fucntion is imp as using from docker container use - "mongo"
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
