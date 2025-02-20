@@ -1,3 +1,7 @@
+# The file to run cicd pipeline
+
+name: Run Tests
+
 name: Run Tests and Linting
 
 on:
