@@ -2,8 +2,6 @@
 
 name: Run Tests
 
-name: Run Tests and Linting
-
 on:
     push:
       branches:
