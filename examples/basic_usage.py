@@ -9,11 +9,10 @@ DB_NAME = 'my_database'
 COLLECTION_NAME = 'my_collection'
 INSERTION_DATA = [{'name': 'Alice'}, {'name': 'Bob'}]
 
-
 import mongo_helper_kit
 
 # Create MongoDB client and initilaize the class for mongo methods
-helper_fun = mongo_helper_kit.Helper_fun("localhost")
+helper_fun = mongo_helper_kit.Helper_fun("localhost")  #use client name as localhost for bare metal and container
 
 # Create database and collection
 helper_fun.make_database_and_collection(DB_NAME, COLLECTION_NAME)
