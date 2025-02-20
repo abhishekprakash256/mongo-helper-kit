@@ -45,6 +45,20 @@ pytest==8.3.3
 
 ## Usage
 
+### Notes 
+
+**Docker or Bare Metal Mongo**
+
+Can be used with docker or bare metal mongo install below are docker commands 
+
+```bash
+
+docker pull mongo
+
+docker run -d --name mongo --network my_network -p 27017:27017 mongo:latest
+
+```
+
 ```
 from mongo_helper_kit.mongo_crud_operations import Helper_fun
 
@@ -62,6 +76,23 @@ db_helper.insert_data("test_db", "test_collection", {"name": "Example", "value":
 db_helper.show_all_data("test_db", "test_collection")
 ```
 
+### Run the module files
+
+Use commands in python to run module file in examples dir from root dir 
+
+python3 -m folder_name.file_name
+
+```bash
+python3 -m examples.basic_usage
+```
+
+### Run the test locally 
+
+```bash
+pytest
+
+```
+Run the command pytest in root directory
 
 ## Configuration
 
@@ -78,7 +109,3 @@ The client name passed in the helper fucntion is imp as using from docker contai
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to customize this blueprint as needed, depending on your library’s specific features and usage!
