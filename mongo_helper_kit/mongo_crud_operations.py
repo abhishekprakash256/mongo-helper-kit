@@ -141,6 +141,7 @@ class Helper_fun():
         
         return page_data
 
+
     def search_database(self,db_name,collection_name,search_query):
         """
         The function to search the database as per data
