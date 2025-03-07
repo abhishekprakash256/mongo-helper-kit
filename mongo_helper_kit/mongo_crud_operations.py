@@ -109,6 +109,7 @@ class Helper_fun():
     def show_article_data(self,db_name,collection_name,article_name):
         """
         Find the specific data from the collection
+        depreciated now 
         """
 
         db = self.mongo_client[db_name]
@@ -119,6 +120,46 @@ class Helper_fun():
             page_data = collection.find_one(article_name)
         
         return page_data
+
+    def get_article_data(self,db_name,collection_name,section_name,article_name):
+        """
+        The function to fetch the article data from section in single collection
+        """
+        db = self.mongo_client[db_name]
+        collection = db[collection_name]
+
+        if collection is not None:
+
+            #search the query 
+            query = {"section_name": section_name, "article_name":article_name }
+
+            page_data = collection.find_one(query)
+
+            if not page_data:
+
+                return None
+        
+        return page_data
+
+    def search_database(self,db_name,collection_name,search_query):
+        """
+        The function to search the database as per data
+        """   
+
+        db = self.mongo_client[db_name]
+        collection = db[collection_name]
+
+        pass
+    
+    def get_card_data(self,db_name,collection_name,section_name):
+        """
+        The funcion to get the card data as per section name
+        """
+
+        db = self.mongo_client[db_name]
+        collection = db[collection_name]
+
+        
 
 
 
