@@ -151,7 +151,8 @@ class Helper_fun():
 
         pass
     
-    def get_card_data(self,db_name,collection_name,section_name):
+
+    def get_card_data(self,db_name,collection_name,section_name, limit):
         """
         The funcion to get the card data as per section name
         """
@@ -159,7 +160,22 @@ class Helper_fun():
         db = self.mongo_client[db_name]
         collection = db[collection_name]
 
+        # Query the MongoDB collection for articles in the specified section
+        filtered_data = collection.find({"section_name": section_name}).limit(limit)
         
+        result = []
+        for article in filtered_data:
+            # Extract the necessary fields based on the new design
+            card = {
+                "card_title": article.get("article_name", ""),
+                "card_para": article.get("article_para", ""),
+                "img_src": article.get("article_image", ""),
+                "card_link": article.get("article_link", "")
+            }
+            result.append(card)
+        
+        return result
+
 
 
 
