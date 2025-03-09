@@ -202,7 +202,7 @@ class Helper_fun():
                 "card_title": article.get("article_name", ""),
                 "card_para": article.get("article_para", ""),
                 "img_src": article.get("article_image", ""),
-                "card_link": article.get("article_link", "")
+                "card_url": article.get("article_link", "")
             }
             results.append(card)
 
@@ -228,7 +228,7 @@ class Helper_fun():
                 "card_title": article.get("article_name", ""),
                 "card_para": article.get("article_para", ""),
                 "img_src": article.get("article_image", ""),
-                "card_link": article.get("article_link", "")
+                "card_url": article.get("article_link", "")
             }
             result.append(card)
         
