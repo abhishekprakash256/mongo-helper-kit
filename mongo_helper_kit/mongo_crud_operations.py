@@ -59,6 +59,8 @@ class Helper_fun():
         # Print the list of existing databases after attempting to create the database
         print("Existing databases after creating '{}':".format(db_name), self.mongo_client.list_database_names())
 
+
+
     def make_collections(self,db_name,collection_name):
         """
         The function to make the collection in the database
@@ -85,8 +87,7 @@ class Helper_fun():
 
         for collection_lst in collections:
             print(collection_lst)
-
-
+    
 
     def show_all_data(self,db_name,collection_name):
         """
@@ -105,7 +106,34 @@ class Helper_fun():
                 print(document)
         else:
             print("No collection available. Please create a collection first.")
+
+
+    def make_index(self,db_name,collection_name):
+        """
+        The function to make the indexin in the database for articles data 
+        """
         
+        db = self.mongo_client[db_name]
+
+        collection = db[collection_name]
+
+        if collection is not None:
+
+            db.collection.create_index([
+                ("article_name", "text"),
+                ("section_name", "text"),
+                ("article_para", "text"),
+                ("article_data.title", "text"),
+                ("article_data.article_para", "text"),
+                ("article_data.markdown_data", "text")
+            ])
+
+            return "Indexing is succesfull"
+        
+        return "Indexing data error"
+        
+
+
     def show_article_data(self,db_name,collection_name,article_name):
         """
         Find the specific data from the collection
@@ -120,6 +148,7 @@ class Helper_fun():
             page_data = collection.find_one(article_name)
         
         return page_data
+
 
     def get_article_data(self,db_name,collection_name,section_name,article_name):
         """
@@ -142,15 +171,43 @@ class Helper_fun():
         return page_data
 
 
-    def search_database(self,db_name,collection_name,search_query):
+    def search_database(self,db_name,collection_name,keyword):
         """
-        The function to search the database as per data
+        The function to search the database as per keyword and return as card data
         """   
 
         db = self.mongo_client[db_name]
         collection = db[collection_name]
 
-        pass
+        # Define the search filter using `$or` and `$regex`
+        search_filter = {
+            "$or": [
+                {"article_name": {"$regex": keyword, "$options": "i"}},
+                {"section_name": {"$regex": keyword, "$options": "i"}},
+                {"article_para": {"$regex": keyword, "$options": "i"}},
+                {"article_data.title": {"$regex": keyword, "$options": "i"}},
+                {"article_data.article_para": {"$regex": keyword, "$options": "i"}},
+                {"article_data.markdown_data": {"$regex": keyword, "$options": "i"}}
+            ]
+        }
+
+        # Execute the query and return results (sorted by `created_at` field)
+        searched_data = list(collection.find(search_filter).sort("created_at", -1))
+
+        results = []
+
+        for article in searched_data:
+            # Extract the necessary fields based on the new design
+            card = {
+                "card_title": article.get("article_name", ""),
+                "card_para": article.get("article_para", ""),
+                "img_src": article.get("article_image", ""),
+                "card_link": article.get("article_link", "")
+            }
+            results.append(card)
+
+        return results
+
     
 
     def get_card_data(self,db_name,collection_name,section_name, limit):
