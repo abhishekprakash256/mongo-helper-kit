@@ -150,9 +150,10 @@ class Helper_fun():
         return page_data
 
 
-    def get_article_data(self,db_name,collection_name,section_name,article_name):
+    def get_article_data(self,db_name,collection_name,section_name,slug):
         """
         The function to fetch the article data from section in single collection
+        use slug now   
         """
         db = self.mongo_client[db_name]
         collection = db[collection_name]
@@ -160,7 +161,7 @@ class Helper_fun():
         if collection is not None:
 
             #search the query 
-            query = {"section_name": section_name, "article_name":article_name }
+            query = {"section_name": section_name, "slug":slug }
 
             page_data = collection.find_one(query)
 
