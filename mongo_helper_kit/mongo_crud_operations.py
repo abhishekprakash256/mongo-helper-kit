@@ -153,6 +153,7 @@ class Helper_fun():
     def get_article_data(self,db_name,collection_name,section_name,article_name):
         """
         The function to fetch the article data from section in single collection
+        use slug now   
         """
         db = self.mongo_client[db_name]
         collection = db[collection_name]
